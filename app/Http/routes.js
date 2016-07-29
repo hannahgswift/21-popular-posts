@@ -23,8 +23,8 @@ Route.get('/register').render('register');
 Route.get('/register', 'UserController.create');
 Route.post('/register', 'UserController.store');
 
-Route.get('/login').render('session.create');
-// Route.post('/login', 'SessionController.store');
+Route.get('/login', 'SessionController.create');
+Route.post('/login', 'SessionController.store');
 
 
 // Route.get('/login').render('login');

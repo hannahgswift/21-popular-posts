@@ -20,7 +20,7 @@ class SessionController {
         .flash();
 
       // Redirect to login
-      response.redirect('/shows');
+      response.redirect('/');
     } catch (e) {
       // Send back old input
       yield request.withAll()
