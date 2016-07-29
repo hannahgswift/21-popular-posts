@@ -20,7 +20,7 @@ class SessionController {
         .flash();
 
       // Redirect to login
-      response.redirect('/');
+      response.redirect('/posts');
     } catch (e) {
       // Send back old input
       yield request.withAll()
@@ -32,6 +32,18 @@ class SessionController {
       // Redirect back
       response.redirect('back');
     }
+  }
+  * destroy(request, response) {
+    yield request.auth.logout();
+
+    // Send success message
+    yield request
+    .with({ success: 'You are logged out!' })
+    // Make message and input last only one request
+    .flash();
+
+    // Redirect back
+    response.redirect('/login');
   }
 }
 
