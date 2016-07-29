@@ -19,8 +19,12 @@ const Route = use('Route');
 
 Route.on('/').render('welcome');
 
-// Route.get('/register').render('register');
+Route.get('/register').render('register');
 Route.get('/register', 'UserController.create');
 Route.post('/register', 'UserController.store');
 
-Route.get('/login').render('login');
+Route.get('/login').render('session.create');
+// Route.post('/login', 'SessionController.store');
+
+
+// Route.get('/login').render('login');

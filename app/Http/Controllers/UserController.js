@@ -15,7 +15,7 @@ class UserController {
     try {
       yield User.create({ username, email, password: yield Hash.make(password) });
 
-      yield request.with({ success: 'Registration complete!' })
+      yield request.with({ success: 'Registration complete! Now you can login!' })
         .flash();
 
       response.redirect('/login');
