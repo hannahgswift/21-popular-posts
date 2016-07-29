@@ -1,9 +1,11 @@
-'use strict'
+'use strict';
 
-const Lucid = use('Lucid')
+const Lucid = use('Lucid');
 
-class Register extends Lucid {
-
+class User extends Lucid {
+  apiTokens() {
+    return this.hasMany('App/Model/Token');
+  }
 }
 
-module.exports = Register
+module.exports = User;

@@ -1,35 +1,31 @@
-'use strict'
+'use strict';
 
-class RegisterController {
+const User = use('App/Model/User');
+const Hash = use('Hash');
 
-  * index(request, response) {
-    //
-  }
 
+class UserController {
   * create(request, response) {
-    //
+    yield response.sendView('register');
   }
 
   * store(request, response) {
-    //
-  }
+    const { username, email, password } = request.all();
 
-  * show(request, response) {
-    //
-  }
+    try {
+      yield User.create({ username, email, password: yield Hash.make(password) });
 
-  * edit(request, response) {
-    //
-  }
+      yield request.with({ success: 'Registration complete!' })
+        .flash();
 
-  * update(request, response) {
-    //
+      response.redirect('/login');
+    } catch (e) {
+      yield request.withAll()
+        .andWith({ error: 'Registration failed. Forever. Go away.' })
+        .flash();
+      response.redirect('back');
+    }
   }
-
-  * destroy(request, response) {
-    //
-  }
-
 }
 
-module.exports = RegisterController
+module.exports = UserController;
