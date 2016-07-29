@@ -1,31 +1,37 @@
 {% extends "master" %}
 
 {% block content %}
-
-<div class="row card">
-    <form class="col s12">
-      <span class="card-title">Register</span>
-
-      <div class="">
-        <div class="input-field col s12">
-          <input id="username" type="text" class="username">
-          <label for="username">Username</label>
-        </div>
-        <div class="input-field col s12">
-          <input id="email" type="text" class="email">
-          <label for="email">Email</label>
-        </div>
-      {# <div class="row"> #}
-        <div class="input-field col s12">
-          <input id="password" type="text" class="password">
-          <label for="password">Password</label>
+<div class="row ">
+  <div class="col m10 offset-m1 s6">
+    <div class="card ">
+      <div class="card-content">
+        <span class="card-title">Register</span>
+          <div class="row">
+            <form action="/register" method="POST" class="col s12">
+              {{ csrfField }}
+              <div class="">
+                <div class="input-field col s12">
+                  <input class="username" type="text" name="username" id="username" value="{{ old('username') }}">
+                  <label for="username">Username</label>
+                </div>
+                <div class="input-field col s12">
+                  <input class="email" type="text" name="email" id="email" value="{{ old('email') }}">
+                  <label for="email">Email</label>
+                </div>
+                <div class="input-field col s12">
+                  <input class="password" type="password" name="password" id="password">
+                  <label for="password">Password</label>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
         <div class="card-action">
           <a href="/register" class="waves-effect blue-grey lighten-2 btn">Register</a>
           <a class="waves-effect deep-orange lighten-1 btn">Submit</a>
         </div>
       </div>
-    </form>
   </div>
+</div>
 
 {% endblock %}

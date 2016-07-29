@@ -20,3 +20,5 @@ const Route = use('Route');
 Route.on('/').render('welcome');
 
 Route.get('/register').render('register');
+
+Route.get('/login').render('login');
