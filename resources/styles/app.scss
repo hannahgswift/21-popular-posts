@@ -1,17 +1,17 @@
 // @import 'yoga';
 // @import 'normalize';
-
 // $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
 @import 'font-awesome';
 @import 'box-sizing';
 @import 'adonis';
 
 body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  justify-content: space-between;
+}
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex-grow: 1;
+}
