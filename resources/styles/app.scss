@@ -27,6 +27,26 @@ main {
   justify-content: space-between;
 }
 
+.post-list__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.thumbs-content__wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.thumbs {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+}
+
+.post-info {
+  margin: 1rem;
+}
+
 // #nav-mobile {
 //   display: flex;
 //   flex-direction: row;
