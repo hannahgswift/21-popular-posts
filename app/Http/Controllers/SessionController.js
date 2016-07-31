@@ -43,7 +43,7 @@ class SessionController {
     .flash();
 
     // Redirect back
-    response.redirect('/login');
+    response.redirect('/');
   }
 }
 

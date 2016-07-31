@@ -3,11 +3,20 @@
 {% block content %}
 
 <ul action="/posts" class="collection with-header">
-  <li class="collection-header"><h4>Posts</h4></li>
+  <li class="collection-header"><h4>Posts</h4><a href="/posts/create"><i class="medium material-icons">add</i></a></li>
   <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-  <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-  <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
-  <li class="collection-item"><div>Alvin<a href="#!" class="secondary-content"><i class="material-icons">send</i></a></div></li>
+  <li class="collection-item">
+      <div class="row">
+      {% for post in posts %}
+      <div class="row__item--1-4">
+        <div class="card">
+          <h4>{{ post.title }}</h4>
+          <p>Listed by: {{ post.user.username }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </li>
 </ul>
 
 {% endblock %}
