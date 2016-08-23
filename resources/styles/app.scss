@@ -4,6 +4,7 @@
 @import 'font-awesome';
 @import 'box-sizing';
 @import 'adonis';
+@import 'buttons';
 
 body {
   display: flex;
@@ -14,6 +15,7 @@ body {
 
 main {
   flex-grow: 1;
+  margin-top: 2rem;
 }
 
 .card {
@@ -32,23 +34,15 @@ main {
   flex-direction: column;
 }
 
-.thumbs-content__wrapper {
-  display: flex;
-  flex-direction: row;
-}
-
-.thumbs {
-  display: flex;
-  flex-direction: column;
-  margin: 1rem;
-}
-
 .post-info {
   margin: 1rem;
 }
 
-// #nav-mobile {
-//   display: flex;
-//   flex-direction: row;
-//   align-items: center;
-// }
+.subtitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.read-more {
+  margin-left: 0.5rem;
+}
