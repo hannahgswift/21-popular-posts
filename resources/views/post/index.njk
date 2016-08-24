@@ -1,31 +1,32 @@
-{% extends "master" %}
-
-{% block content %}
+{% extends "master" %} {% block content %}
 
 <ul action="/posts" class="collection with-header">
-  <li class="collection-header"><h4>Posts</h4><a href="/posts/create"><i class="medium material-icons">add</i></a></li>
-  <li class="collection-item">
-      <div class="row post-list__item">
-      {% for post in posts %}
-      <div class="thumbs-content__wrapper">
-        <div class="thumbs">
-          <i class="material-icons thumb-counter">thumb_up</i>
-          <h5 type="text">0</h5>
-          <i class="material-icons thumb-counter">thumb_down</i>
-        </div>
-        <div class="row__item--1-4">
-          <div class="post-info">
-            <h4>{{ post.title }}</h4>
-            <div class="subtitle">
-              <p>Listed by: {{ post.user.username }} </p>
-              <a href="https://i0.wp.com/s4.favim.com/orig/50/boo-cute-dog-pomeranian-Favim.com-452643.jpg"><p class="read-more">Read More...</p></a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </li>
+ <li class="collection-header">
+   <h4>Posts</h4><a href="/posts/create"><i class="medium material-icons">add</i></a></li>
+ <li class="collection-item">
+   <div class="row post-list__item">
+     {% for post in posts %}
+     <div class="thumbs-content__wrapper">
+       <div class="thumbs">
+         <i class="material-icons thumb-counter">thumb_up</i>
+         <h5 type="text">0</h5>
+         <i class="material-icons thumb-counter">thumb_down</i>
+       </div>
+       <div class="row__item--1-4">
+         <div class="post-info">
+           <h4>{{ post.title }}</h4>
+           <div class="subtitle">
+             <p>Listed by: {{ post.user.username }} </p>
+             <a href="https://i0.wp.com/s4.favim.com/orig/50/boo-cute-dog-pomeranian-Favim.com-452643.jpg">
+               <p class="read-more">Read More...</p>
+             </a>
+           </div>
+         </div>
+       </div>
+     </div>
+     {% endfor %}
+   </div>
+ </li>
 </ul>
 
 {% endblock %}
