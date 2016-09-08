@@ -21,7 +21,7 @@ class UserController {
       response.redirect('/login');
     } catch (e) {
       yield request.withAll()
-        .andWith({ error: 'Registration failed. Forever. Go away.' })
+        .andWith({ error: 'Registration failed.' })
         .flash();
       response.redirect('back');
     }

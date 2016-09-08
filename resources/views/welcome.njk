@@ -1,8 +1,22 @@
 {% extends 'master' %}
 
 {% block content %}
-<h1>Welcome to Popular Posts!</h1>
-<a href="/login" class="waves-effect deep-orange lighten-1 btn ">Log In</a>
-<a href="/register" class="waves-effect deep-orange lighten-1 btn">Register</a>
+
+{% if currentUser %}
+<div class="container welcome-content">
+  <div class="center-align">
+    <h4 class="welcome-message">Welcome {{ currentUser.username }}. Head over to the <a href="/posts">posts</a> page to see what everyone is talking about.</h4>
+  </div>
+</div>
+{% else  %}
+<div class="container welcome-content">
+  <div class="center-align">
+    <h1>Welcome to Popular Posts!</h1>
+    <h5>Login or create your account to start posting.</h5>
+    <a href="/login" class="waves-effect deep-orange lighten-1 btn ">Log In</a>
+    <a href="/register" class="waves-effect deep-orange lighten-1 btn">Register</a>
+  </div>
+</div>
+{% endif %}
 
 {% endblock %}

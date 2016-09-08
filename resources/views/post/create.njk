@@ -1,4 +1,5 @@
 {% extends "master" %} {% block content %}
+<div class="container">
 <div class="row">
   <div class="col m10 offset-m1 s6">
     <div class="card">
@@ -15,11 +16,11 @@
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input class="post" type="text" name="post" id="post">
-                <label for="post">Post</label>
+                <textarea class="materialize-textarea post" type="text" name="post" id="post"></textarea>
+                <label for="textarea1 post">Post</label>
               </div>
             </div>
-            <div class="card-action">
+            <div>
               <a href="/posts" class="btn blue-grey lighten-2">Cancel</a>
               <button class="btn deep-orange lighten-1">Submit</button>
             </div>
@@ -29,5 +30,5 @@
     </div>
   </div>
 </div>
-
+</div>
 {% endblock %}

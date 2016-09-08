@@ -2635,8 +2635,9 @@ ul li {
 }
 
 a {
-  color: #039be5;
+  color: #ff7043;
   text-decoration: none;
+  font-weight: bold;
   -webkit-tap-highlight-color: transparent;
 }
 

@@ -1,4 +1,6 @@
-{% extends "master" %} {% block content %}
+{% extends "master" %}
+{% block content %}
+<div class="container">
 <div class="row">
   <div class="col m10 offset-m1 s6">
     <div class="card ">
@@ -19,8 +21,7 @@
                 <label for="password">Password</label>
               </div>
             </div>
-            <div class="card-action">
-              <a href="/register" class=" btn">Register</a>
+            <div>
               <button class="btn">Submit</button>
             </div>
           </form>
@@ -28,6 +29,7 @@
       </div>
     </div>
   </div>
+</div>
 </div>
 
 {% endblock %}

@@ -4,22 +4,32 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>AdonisJs - Node.Js MVC Framework</title>
-  <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
+  <title>Popular Posts</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
   <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
   <link rel="stylesheet" type="text/css" href="/dist/app.css">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Fredoka+One|Roboto" rel="stylesheet">
 </head>
 
 <body>
+  <ul id="dropdown1" class="dropdown-content">
+    {% if currentUser %}
+    <li><a href="#" class="greeting">Hello {{ currentUser.username }}!</a></li>
+    <li><a href="/posts">Posts</a></li>
+    <li><a href="/logout">Logout</a></li>
+    {% else %}
+    <li><a href="/login">Login</a></li>
+    <li><a href="/register">Register</a></li>
+    {% endif %}
+  </ul>
   <nav>
     <div class="nav-wrapper indigo lighten-1">
       <div class="container">
         <a href="/" class="brand-logo">Popular Posts</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           {% if currentUser %}
-          <li>Hello {{ currentUser.username }}!</li>
+          <li class="greeting">Hello {{ currentUser.username }}!</li>
           <li><a href="/posts">Posts</a></li>
           <li><a href="/logout">Logout</a></li>
           {% else %}
@@ -27,11 +37,12 @@
           <li><a href="/register">Register</a></li>
           {% endif %}
         </ul>
+        <div><a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="material-icons right">arrow_drop_down</i></a></div>
+
       </div>
     </div>
   </nav>
   <main>
-    <div class="container ">
       {% if old('error') %}
       <div class="row">
         <div class="chip red accent-1 col s12 offset-m1 m10">
@@ -42,24 +53,21 @@
       <div class="chip green accent-2 col s12 offset-m1 m10">
         <i class="close material-icons">close</i> {{ old('success') }}
       </div>
-      {% endif %} {% block content %} {% endblock %}
-    </div>
+      {% endif %}
+
+      {% block content %}
+      {% endblock %}
+
   </main>
   {% block footer %}
   <footer class="page-footer indigo lighten-1">
     <div class="container">
       <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">This is definitely not a redit clone...</h5>
+        <div class="col l12 s12">
+          <h6 class="white-text">Built by Hannah Swift with <a href="http://adonisjs.com/">Adonis.js</a> + Materialize. View source code <a href="https://github.com/hannahgswift/21-popular-posts/commits/develop">here</a>.</h6>
         </div>
         <div class="col l4 offset-l2 s12">
         </div>
-      </div>
-    </div>
-    <div class="footer-copyright">
-      <div class="container">
-        © 2014 Copyright Text
-        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
       </div>
     </div>
   </footer>
