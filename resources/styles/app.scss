@@ -1,0 +1,102 @@
+// @import 'yoga';
+// @import 'normalize';
+// $fa-font-path: '//netdna.bootstrapcdn.com/font-awesome/4.3.0/fonts';
+@import 'font-awesome';
+@import 'box-sizing';
+@import 'adonis';
+@import 'buttons';
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+main {
+  flex-grow: 1;
+  margin-top: 2rem;
+}
+
+.nav-wrapper {
+  margin-bottom: 0;
+}
+
+.brand-logo {
+  font-family: 'Fredoka One', cursive;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}
+
+.greeting {
+  text-transform: capitalize;
+}
+
+.dropdown-content {
+  li {
+    text-transform: uppercase;
+  }
+}
+
+.welcome-content {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  background: yellow;
+  height: 100%;
+}
+
+.card {
+  min-width: 25rem;
+}
+
+.card-title {
+  font-family: 'Roboto', sans-serif;
+}
+
+.collection-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post-list__item {
+  display: flex;
+  flex-direction: column;
+}
+
+.post-info {
+  margin: 1rem;
+}
+
+.subtitle {
+  display: flex;
+  flex-direction: row;
+}
+
+.read-more {
+  margin-left: 0.5rem;
+}
+
+.listed-by {
+  text-transform: capitalize;
+}
+
+.dropdown-button {
+  display: none;
+}
+
+
+@media #{$medium-and-down} {
+  .dropdown-button {
+    display: block;
+  }
+
+  .dropdown-content {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
